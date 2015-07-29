@@ -3,8 +3,9 @@
 
 #step-1 make a file to count how many times each residue is repeated in each of the column
 
-grep -A 1 "@NG" Test100k.fastq | sed '/^@/ d' | sed '/^--/ d' | sed 's/./& /g' > output.txt
-
+grep -A 1 "@" Test100k.fastq | sed '/^@/ d' | sed '/^--/ d' | sed 's/./& /g' > output.txt
+        #  ^
+        #  |-> if any common letters are found in all the sequences of the fastq file after '@', user can include those letters
 
 #step-2 Count each residue in each column
 
